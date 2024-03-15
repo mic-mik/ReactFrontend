@@ -1,0 +1,22 @@
+.produits {
+  margin: 30px 0;
+}
+
+.produit {
+  width: 380px;
+  text-align: center;
+  margin: 20px 0;
+  p {
+    margin: 5px;
+    font-style: italic;
+  }
+}
+
+.description_produit {
+  color: var(--gray-1);
+  margin-top: 15px;
+}
+
+.item_saved {
+  color: rgb(194 157 101);
+}
