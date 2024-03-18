@@ -1,15 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import Produits from "./Produits";
 import styles from "../assets/styles/Content.module.scss";
 import Accueil from "./Accueil";
 
 const Content = ({ produits, accueil }) => {
+  const [visible, setVisible] = useState(true);
+  const handleVisible = () => {
+    setVisible(!visible);
+  };
   return (
     <div className={styles.container}>
       <div className={styles.content}>
-        <Accueil accueil={accueil} />
+        <Accueil accueil={accueil} handleDecouvrir={handleVisible} />
       </div>
-      <Produits produits={produits} />
+      <Produits produits={produits} visible={visible} />
     </div>
   );
 };

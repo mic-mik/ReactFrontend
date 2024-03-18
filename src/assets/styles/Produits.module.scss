@@ -1,5 +1,9 @@
 .produits {
   margin: 30px 0;
+  display: none;
+  transform: scale(0);
+  opacity: 0;
+  transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
 }
 
 .produit {
@@ -19,4 +23,11 @@
 
 .item_saved {
   color: rgb(194 157 101);
+}
+
+.visible {
+  display: block;
+  transform: scale(1);
+  opacity: 1;
+  animation: anim 0.6s ease-in-out;
 }

@@ -4,7 +4,7 @@ import Content from "./components/Content";
 import Header from "./components/Header";
 import Banner from "./components/Banner";
 import { produits, accueil } from "./data/data";
-import styles from "./assets/styles/Content.module.scss";
+import styles from "./assets/styles/App.module.scss";
 
 const App = () => {
   return (
