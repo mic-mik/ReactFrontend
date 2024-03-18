@@ -3,7 +3,7 @@ import Produits from "./Produits";
 import styles from "../assets/styles/Content.module.scss";
 import Accueil from "./Accueil";
 
-const Content = ({ produits, accueil }) => {
+const Content = ({ produits, accueil, handleAjusterProduitFavoris }) => {
   const [visible, setVisible] = useState(true);
   const handleVisible = () => {
     setVisible(!visible);
@@ -13,7 +13,11 @@ const Content = ({ produits, accueil }) => {
       <div className={styles.content}>
         <Accueil accueil={accueil} handleDecouvrir={handleVisible} />
       </div>
-      <Produits produits={produits} visible={visible} />
+      <Produits
+        produits={produits}
+        visible={visible}
+        handleAjusterProduitFavoris={handleAjusterProduitFavoris}
+      />
     </div>
   );
 };

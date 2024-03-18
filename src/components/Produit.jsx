@@ -1,17 +1,18 @@
 import React, { useState } from "react";
 import styles from "../assets/styles/Produits.module.scss";
 
-const Produit = ({ data }) => {
+const Produit = ({ data, handleAjusterProduitFavoris }) => {
   const { image, name, description } = data;
   const [itemSaved, setItemSaved] = useState(false);
 
-  const handleClickSaved = () => {
+  const handleClickSaved = (itemId) => {
     setItemSaved(!itemSaved);
+    handleAjusterProduitFavoris(itemId, !itemSaved);
   };
 
   return (
     <div
-      onClick={handleClickSaved}
+      onClick={() => handleClickSaved(data._id)}
       className={`${styles.produit} hover_opacity`}
     >
       <div>
