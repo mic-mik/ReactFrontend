@@ -31,9 +31,27 @@ export const produits = [
   },
   {
     _id: 6,
-    name: "Cacao Porcelana",
-    image: "assets/images/produits/produit1.jpg",
-    description: "Gourmand, Boisé",
+    name: "Iris Ebène",
+    image: "assets/images/produits/produit6.jpg",
+    description: "Floral, Cuir",
+  },
+  {
+    _id: 7,
+    name: "Bois d'Ambrette",
+    image: "assets/images/produits/produit7.jpg",
+    description: "Musqué, Boisé",
+  },
+  {
+    _id: 8,
+    name: "Cèdre Figalia",
+    image: "assets/images/produits/produit8.jpg",
+    description: "Végétal, Boisé",
+  },
+  {
+    _id: 9,
+    name: "Narcisse Taiji",
+    image: "assets/images/produits/produit9.jpg",
+    description: "Floral, Boisé, Épicé",
   },
 ];
 
