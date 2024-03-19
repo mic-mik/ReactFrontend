@@ -5,14 +5,14 @@ const Produit = ({ data, handleAjusterProduitFavoris }) => {
   const { image, name, description } = data;
   const [itemSaved, setItemSaved] = useState(false);
 
-  const handleClickSaved = (itemId) => {
+  const handleClickSaved = (item) => {
     setItemSaved(!itemSaved);
-    handleAjusterProduitFavoris(itemId, !itemSaved);
+    handleAjusterProduitFavoris(item, !itemSaved);
   };
 
   return (
     <div
-      onClick={() => handleClickSaved(data._id)}
+      onClick={() => handleClickSaved(data)}
       className={`${styles.produit} hover_opacity`}
     >
       <div>

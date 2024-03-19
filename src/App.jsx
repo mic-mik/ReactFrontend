@@ -8,19 +8,19 @@ import styles from "./assets/styles/App.module.scss";
 
 const App = () => {
   const [produitsFavoris, setProduitsFavoris] = useState([]);
-  const handleAjusterProduitFavoris = (produitId, saved) => {
+  const handleAjusterProduitFavoris = (item, saved) => {
     let newProduitsFavoris = produitsFavoris.filter(
-      (item) => item != produitId
+      (produit) => produit._id != item._id
     );
     newProduitsFavoris = saved
-      ? [produitId, ...newProduitsFavoris]
+      ? [item, ...newProduitsFavoris]
       : newProduitsFavoris;
     setProduitsFavoris(newProduitsFavoris);
   };
 
   return (
     <div className={`${styles.app_container} d-flex flex-column`}>
-      <Header saved={produitsFavoris.length} />
+      <Header produitsFavoris={produitsFavoris} />
       <Banner />
       <Content
         produits={produits}

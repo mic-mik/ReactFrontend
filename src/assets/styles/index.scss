@@ -1,8 +1,9 @@
-@use "./partials/_base";
-@use "./partials/_flex";
-@use "./partials/_utils";
-@use "./partials/_variables";
+@use "./partials/variables";
+@use "./partials/base";
+@use "./partials/flex";
+@use "./partials/utils";
 @use "./partials/keyframes";
+@use "./partials/theme";
 
 body {
   font-size: 15px;

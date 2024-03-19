@@ -31,3 +31,10 @@
   opacity: 1;
   animation: anim 0.6s ease-in-out;
 }
+
+.produitsFavoris {
+  img {
+    width: 50px !important;
+    padding: 0 !important;
+  }
+}
