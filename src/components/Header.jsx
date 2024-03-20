@@ -7,7 +7,7 @@ import User from "./User";
 import Logo from "./Logo";
 import { users } from "../data/data";
 
-const Header = ({ produitsFavoris }) => {
+const Header = ({ produitsFavoris, setProduitsFavoris }) => {
   const [showMenu, setShowMenu] = useState(false);
   const [showConnexion, setShowConnexion] = useState(false);
   const [emailInput, setEmailInput] = useState("");
@@ -35,6 +35,7 @@ const Header = ({ produitsFavoris }) => {
   const handleOnClickDeconnexion = (e) => {
     e.stopPropagation();
     setUser(null);
+    setProduitsFavoris([]);
   };
   return (
     <div className={`${styles.header} d-flex flex-row align-items-center`}>

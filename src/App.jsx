@@ -20,7 +20,10 @@ const App = () => {
 
   return (
     <div className={`${styles.app_container} d-flex flex-column`}>
-      <Header produitsFavoris={produitsFavoris} />
+      <Header
+        produitsFavoris={produitsFavoris}
+        setProduitsFavoris={setProduitsFavoris}
+      />
       <Banner />
       <Content
         produits={produits}
