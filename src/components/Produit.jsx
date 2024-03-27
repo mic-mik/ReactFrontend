@@ -1,13 +1,11 @@
 import React, { useState } from "react";
 import styles from "../assets/styles/Produits.module.scss";
 
-const Produit = ({ data, handleAjusterProduitFavoris }) => {
+const Produit = ({ data, handleAjusterProduitFavoris, saved }) => {
   const { image, name, note } = data;
-  const [itemSaved, setItemSaved] = useState(false);
 
   const handleClickSaved = (item) => {
-    setItemSaved(!itemSaved);
-    handleAjusterProduitFavoris(item, !itemSaved);
+    handleAjusterProduitFavoris(item);
   };
 
   return (
@@ -23,7 +21,7 @@ const Produit = ({ data, handleAjusterProduitFavoris }) => {
         <p>{note}</p>
         <i
           className={`fa-solid fa-xl fa-bookmark ${
-            itemSaved ? styles.item_saved : ""
+            saved ? styles.item_saved : ""
           }`}
         ></i>
       </div>

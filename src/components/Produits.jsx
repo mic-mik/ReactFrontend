@@ -3,7 +3,12 @@ import Produit from "./Produit";
 import styles from "../assets/styles/Produits.module.scss";
 import SearchBar from "./SearchBar";
 
-const Produits = ({ produits, visible, handleAjusterProduitFavoris }) => {
+const Produits = ({
+  produits,
+  visible,
+  handleAjusterProduitFavoris,
+  produitsFavoris,
+}) => {
   const [filterInput, setFilterInput] = useState("");
   const [filterBy, setFilterBy] = useState({ byName: true, byNote: false });
 
@@ -20,6 +25,11 @@ const Produits = ({ produits, visible, handleAjusterProduitFavoris }) => {
       setFilterBy({ ...filterBy, byNote: e.target.checked });
 
     console.log(byFilter);
+  };
+
+  const getItemSavedState = (item) => {
+    const test = produitsFavoris.filter((p) => item._id === p._id);
+    return test.length > 0;
   };
 
   return (
@@ -46,6 +56,7 @@ const Produits = ({ produits, visible, handleAjusterProduitFavoris }) => {
               <Produit
                 data={item}
                 handleAjusterProduitFavoris={handleAjusterProduitFavoris}
+                saved={getItemSavedState(item)}
               />
             </Fragment>
           ))}
