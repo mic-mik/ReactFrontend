@@ -9,8 +9,8 @@ const Content = ({ produits, accueil, handleAjusterProduitFavoris }) => {
     setVisible(!visible);
   };
   return (
-    <div className={styles.container}>
-      <div className={styles.content}>
+    <div>
+      <div className={`container mt-50 ${styles.content}`}>
         <Accueil accueil={accueil} handleDecouvrir={handleVisible} />
       </div>
       <Produits

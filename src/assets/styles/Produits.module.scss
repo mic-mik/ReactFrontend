@@ -1,15 +1,10 @@
 .produits {
   margin: 30px 0;
-  display: none;
-  transform: scale(0);
-  opacity: 0;
-  transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
 }
 
 .produit {
   width: 380px;
   text-align: center;
-  margin: 20px 0;
   p {
     margin: 5px auto 10px auto;
     font-style: italic;
@@ -25,16 +20,19 @@
   color: var(--favoris);
 }
 
-.visible {
-  display: block;
-  transform: scale(1);
-  opacity: 1;
-  animation: anim 0.6s ease-in-out;
-}
-
 .produitsFavoris {
   img {
     width: 50px !important;
     padding: 0 !important;
   }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 380px);
+  grid-auto-columns: repeat(3, 350px);
+  row-gap: 30px;
+  column-gap: 30px;
+  margin-bottom: 50px;
+  margin-top: 30px;
 }
