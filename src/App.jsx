@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Footer from "./components/Footer";
 import Content from "./components/Content";
 import Header from "./components/Header";
 import Banner from "./components/Banner";
 import { produits, accueil } from "./data/data";
 import styles from "./assets/styles/App.module.scss";
+import ProduitFavorisContext from "./contexts/produitFavorisContext";
 
 const App = () => {
   const [produitsFavoris, setProduitsFavoris] = useState([]);
@@ -19,17 +20,13 @@ const App = () => {
 
   return (
     <div className={`${styles.app_container} d-flex flex-column`}>
-      <Header
-        produitsFavoris={produitsFavoris}
-        setProduitsFavoris={setProduitsFavoris}
-      />
-      <Banner />
-      <Content
-        produits={produits}
-        accueil={accueil}
-        handleAjusterProduitFavoris={handleAjusterProduitFavoris}
-        produitsFavoris={produitsFavoris}
-      />
+      <ProduitFavorisContext.Provider
+        value={{ data: produitsFavoris, setData: handleAjusterProduitFavoris }}
+      >
+        <Header setProduitsFavoris={setProduitsFavoris} />
+        <Banner />
+        <Content produits={produits} accueil={accueil} />
+      </ProduitFavorisContext.Provider>
       <Footer />
     </div>
   );

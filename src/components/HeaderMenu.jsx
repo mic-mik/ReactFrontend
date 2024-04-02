@@ -1,11 +1,14 @@
+import { useContext } from "react";
 import styles from "../assets/styles/HeaderMenu.module.scss";
 import ProduitsFavoris from "./ProduitsFavoris";
+import ProduitFavorisContext from "../contexts/produitFavorisContext";
 
-function HeaderMenu({ produitsFavoris }) {
+function HeaderMenu() {
+  const produitsFavorisContext = useContext(ProduitFavorisContext);
   return (
     <ul className={`${styles.menuContainer} border p-20`}>
-      {produitsFavoris.length > 0 ? (
-        produitsFavoris.map((favoris) => (
+      {produitsFavorisContext.data.length > 0 ? (
+        produitsFavorisContext.data.map((favoris) => (
           <li key={favoris._id}>
             <ProduitsFavoris produit={favoris} />
           </li>

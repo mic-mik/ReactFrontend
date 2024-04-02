@@ -1,16 +1,13 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useContext, useState } from "react";
 import Produit from "./Produit";
 import styles from "../assets/styles/Produits.module.scss";
 import SearchBar from "./SearchBar";
+import ProduitFavorisContext from "../contexts/produitFavorisContext";
 
-const Produits = ({
-  produits,
-  visible,
-  handleAjusterProduitFavoris,
-  produitsFavoris,
-}) => {
+const Produits = ({ produits, visible }) => {
   const [filterInput, setFilterInput] = useState("");
   const [filterBy, setFilterBy] = useState({ byName: true, byNote: false });
+  const produitsFavorisContext = useContext(ProduitFavorisContext);
 
   function handleInput(e) {
     const filter = e.target.value;
@@ -28,7 +25,7 @@ const Produits = ({
   };
 
   const getItemSavedState = (item) => {
-    const test = produitsFavoris.filter((p) => item._id === p._id);
+    const test = produitsFavorisContext.data.filter((p) => item._id === p._id);
     return test.length > 0;
   };
 
@@ -53,11 +50,7 @@ const Produits = ({
           })
           .map((item) => (
             <Fragment key={item._id}>
-              <Produit
-                data={item}
-                handleAjusterProduitFavoris={handleAjusterProduitFavoris}
-                saved={getItemSavedState(item)}
-              />
+              <Produit data={item} saved={getItemSavedState(item)} />
             </Fragment>
           ))}
       </div>

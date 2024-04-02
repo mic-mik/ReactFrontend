@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import logo from "../assets/images/AM-logo.svg";
 import styles from "../assets/styles/Header.module.scss";
 import HeaderMenu from "./HeaderMenu";
@@ -6,13 +6,15 @@ import Connexion from "./Connexion";
 import User from "./User";
 import Logo from "./Logo";
 import { users } from "../data/data";
+import ProduitFavorisContext from "../contexts/produitFavorisContext";
 
-const Header = ({ produitsFavoris, setProduitsFavoris }) => {
+const Header = ({ setProduitsFavoris }) => {
   const [showMenu, setShowMenu] = useState(false);
   const [showConnexion, setShowConnexion] = useState(false);
   const [emailInput, setEmailInput] = useState("");
   const [passwordInput, setPasswordInput] = useState("");
   const [user, setUser] = useState(null);
+  const produitsFavorisContext = useContext(ProduitFavorisContext);
 
   const handleOnChangeEmail = (e) => {
     setEmailInput(e.target.value);
@@ -44,7 +46,7 @@ const Header = ({ produitsFavoris, setProduitsFavoris }) => {
       <ul>
         <li>
           <span className={styles.produitsFavoris}>
-            {produitsFavoris.length}
+            {produitsFavorisContext.data.length}
           </span>
           <i
             onClick={() => {
@@ -68,7 +70,7 @@ const Header = ({ produitsFavoris, setProduitsFavoris }) => {
       {showMenu && (
         <>
           <div onClick={() => setShowMenu(false)} className="calc"></div>
-          <HeaderMenu produitsFavoris={produitsFavoris} />
+          <HeaderMenu />
         </>
       )}
       {showConnexion && (

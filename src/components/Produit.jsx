@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import styles from "../assets/styles/Produits.module.scss";
+import ProduitFavorisContext from "../contexts/produitFavorisContext";
 
-const Produit = ({ data, handleAjusterProduitFavoris, saved }) => {
+const Produit = ({ data, saved }) => {
   const { image, name, note } = data;
+  const produitFavorisContext = useContext(ProduitFavorisContext);
 
   const handleClickSaved = (item) => {
-    handleAjusterProduitFavoris(item);
+    produitFavorisContext.setData(item);
   };
 
   return (
