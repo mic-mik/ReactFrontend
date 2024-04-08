@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Footer from "./components/Footer";
 import Content from "./components/Content";
 import Header from "./components/Header";
@@ -17,6 +17,18 @@ const App = () => {
       setProduitsFavoris(produitsFavoris.filter((t) => t._id !== item._id));
     else setProduitsFavoris([...produitsFavoris, item]);
   };
+
+  useEffect(() => {
+    async function getMessage() {
+      const response = await fetch("http://localhost:5000/");
+      // console.log(response);
+      if (response.ok) {
+        const data = await response.json();
+        console.log(data);
+      }
+    }
+    getMessage();
+  }, []);
 
   return (
     <div className={`${styles.app_container} d-flex flex-column`}>
