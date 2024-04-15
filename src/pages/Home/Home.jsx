@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import Produits from "./Produits";
-import styles from "../assets/styles/Content.module.scss";
-import Accueil from "./Accueil";
+import styles from "./Home.module.scss";
+import Produits from "./components/Produits/Produits";
+import Accueil from "./components/Accueil/Accueil";
 
-const Content = ({ produits, accueil }) => {
+const Home = ({ produits, accueil }) => {
   const [visible, setVisible] = useState(true);
   const handleVisible = () => {
     setVisible(!visible);
@@ -13,9 +13,9 @@ const Content = ({ produits, accueil }) => {
       <div className={`container mt-50 ${styles.content}`}>
         <Accueil accueil={accueil} handleDecouvrir={handleVisible} />
       </div>
-      <Produits produits={produits} visible={visible} />
+      <Produits visible={visible} />
     </div>
   );
 };
 
-export default Content;
+export default Home;

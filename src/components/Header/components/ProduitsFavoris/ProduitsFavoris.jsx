@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../assets/styles/Produits.module.scss";
+import styles from "../../../../pages/Home/components/Produits/Produits.module.scss";
 
 const ProduitsFavoris = ({ produit }) => {
   const { image, name } = produit;

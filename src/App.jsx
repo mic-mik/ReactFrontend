@@ -1,15 +1,16 @@
 import React, { useContext, useEffect, useState } from "react";
-import Footer from "./components/Footer";
-import Content from "./components/Content";
-import Header from "./components/Header";
-import Banner from "./components/Banner";
 import { accueil } from "./data/data";
-import styles from "./assets/styles/App.module.scss";
+import styles from "./App.module.scss";
 import ProduitFavorisContext from "./contexts/produitFavorisContext";
+import Home from "./pages/Home/Home";
+import Header from "./components/Header/Header";
+import Banner from "./components/Banner/Banner";
+import Footer from "./components/Footer/Footer";
+import Admin from "./pages/Admin/Admin";
 
 const App = () => {
   const [produitsFavoris, setProduitsFavoris] = useState([]);
-  const [produits, setProduits] = useState([]);
+  const [page, setPage] = useState("home");
   // Si l'item est dans la liste on l'enlève
   // Sinon on l'ajoute
   const handleAjusterProduitFavoris = (item) => {
@@ -19,27 +20,16 @@ const App = () => {
     else setProduitsFavoris([...produitsFavoris, item]);
   };
 
-  useEffect(() => {
-    const getProduits = async () => {
-      fetch("http://localhost:5000/produits")
-        .then((reponse) => {
-          if (reponse.ok) {
-            reponse.json().then((data) => setProduits(data));
-          }
-        })
-        .catch((e) => console.log(e));
-    };
-    getProduits();
-  }, []);
-
   return (
     <div className={`${styles.app_container} d-flex flex-column`}>
       <ProduitFavorisContext.Provider
         value={{ data: produitsFavoris, setData: handleAjusterProduitFavoris }}
       >
-        <Header setProduitsFavoris={setProduitsFavoris} />
+        <Header setProduitsFavoris={setProduitsFavoris} setPage={setPage} />
         <Banner />
-        <Content produits={produits} accueil={accueil} />
+
+        {page == "home" && <Home accueil={accueil} />}
+        {page == "admin" && <Admin />}
       </ProduitFavorisContext.Provider>
       <Footer />
     </div>

@@ -4,6 +4,7 @@
 @use "./partials/utils";
 @use "./partials/keyframes";
 @use "./partials/theme";
+@use "./partials/spinner";
 
 body {
   font-size: 15px;
@@ -54,5 +55,19 @@ body {
   text-transform: uppercase;
   text-decoration: none;
   margin-top: 20px;
+  display: inline-block;
+}
+
+.ajouter_produits {
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 7px 10px;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.7px;
+  line-height: 22.4px;
+  text-transform: uppercase;
+  text-decoration: none;
   display: inline-block;
 }

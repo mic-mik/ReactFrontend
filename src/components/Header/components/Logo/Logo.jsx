@@ -1,9 +1,9 @@
 import React from "react";
 
-const Logo = ({ logo }) => {
+const Logo = ({ logo, setPage }) => {
   return (
     <div className="flex-fill">
-      <a href="#">
+      <a onClick={() => setPage("home")} href="#">
         <img src={logo} alt="Atelier Materi - Haute parfumerie française" />
       </a>
     </div>

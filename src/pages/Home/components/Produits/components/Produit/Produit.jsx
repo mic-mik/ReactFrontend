@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
-import styles from "../assets/styles/Produits.module.scss";
-import ProduitFavorisContext from "../contexts/produitFavorisContext";
+import styles from "../../Produits.module.scss";
+import ProduitFavorisContext from "../../../../../../contexts/produitFavorisContext";
 
 const Produit = ({ data, saved }) => {
   const { image, name, note } = data;

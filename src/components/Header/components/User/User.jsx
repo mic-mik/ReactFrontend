@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../assets/styles/User.module.scss";
+import styles from "./User.module.scss";
 
 const User = ({ user, handleDeconnexion }) => {
   return (

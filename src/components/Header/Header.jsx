@@ -1,14 +1,14 @@
 import React, { useContext, useState } from "react";
-import logo from "../assets/images/AM-logo.svg";
-import styles from "../assets/styles/Header.module.scss";
-import HeaderMenu from "./HeaderMenu";
-import Connexion from "./Connexion";
-import User from "./User";
-import Logo from "./Logo";
-import { users } from "../data/data";
-import ProduitFavorisContext from "../contexts/produitFavorisContext";
+import logo from "../../assets/images/AM-logo.svg";
+import styles from "./Header.module.scss";
+import { users } from "../../data/data";
+import ProduitFavorisContext from "../../contexts/produitFavorisContext";
+import Logo from "./components/Logo/Logo";
+import User from "./components/User/User";
+import HeaderMenu from "./components/HeaderMenu/HeaderMenu";
+import Connexion from "./components/Connexion/Connexion";
 
-const Header = ({ setProduitsFavoris }) => {
+const Header = ({ setProduitsFavoris, setPage }) => {
   const [showMenu, setShowMenu] = useState(false);
   const [showConnexion, setShowConnexion] = useState(false);
   const [emailInput, setEmailInput] = useState("");
@@ -41,9 +41,18 @@ const Header = ({ setProduitsFavoris }) => {
   };
   return (
     <div className={`${styles.header} d-flex flex-row align-items-center`}>
-      <Logo logo={logo} />
+      <Logo logo={logo} setPage={setPage} />
       <User user={user} handleDeconnexion={handleOnClickDeconnexion} />
       <ul>
+        <li>
+          <a
+            onClick={() => setPage("admin")}
+            className="hover_opacity ajouter_produits mr-10"
+            href="#"
+          >
+            <i className="fa-solid fa-plus mr-5"></i> Produits
+          </a>
+        </li>
         <li>
           <span className={styles.produitsFavoris}>
             {produitsFavorisContext.data.length}

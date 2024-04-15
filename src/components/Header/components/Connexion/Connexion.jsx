@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../assets/styles/Connexion.module.scss";
+import styles from "./Connexion.module.scss";
 
 const Connexion = ({
   handleEmail,

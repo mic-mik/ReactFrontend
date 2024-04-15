@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "../assets/styles/SearchBar.module.scss";
+import styles from "./SearchBar.module.scss";
 
 const SearchBar = ({ handleInput, handleFilter, filterBy }) => {
   const [showFilter, setShowFilter] = useState(false);
