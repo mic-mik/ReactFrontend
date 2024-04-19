@@ -20,7 +20,7 @@ const useFetchData = (url) => {
     getData();
   }, []);
 
-  return [data, isLoading];
+  return [data, setData, isLoading];
 };
 
 export default useFetchData;

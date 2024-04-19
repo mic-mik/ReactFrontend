@@ -11,7 +11,7 @@ const Home = ({ produits, accueil }) => {
   return (
     <div>
       <div className={`container mt-50 ${styles.content}`}>
-        <Accueil accueil={accueil} handleDecouvrir={handleVisible} />
+        <Accueil handleDecouvrir={handleVisible} />
       </div>
       <Produits visible={visible} />
     </div>

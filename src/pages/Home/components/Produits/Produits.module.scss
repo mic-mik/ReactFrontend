@@ -36,3 +36,27 @@
   margin-bottom: 50px;
   margin-top: 30px;
 }
+
+.delete_edit {
+  position: relative;
+  i {
+    position: absolute;
+    right: 18px;
+    background: var(--primary);
+    color: white;
+    z-index: 999;
+    &:hover {
+      background-color: red;
+    }
+  }
+}
+
+i.fa_trash {
+  top: 18px;
+  padding: 7px;
+}
+
+i.fa_pen {
+  top: 60px;
+  padding: 7px 6px;
+}

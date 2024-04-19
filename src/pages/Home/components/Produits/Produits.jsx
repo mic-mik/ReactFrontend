@@ -4,12 +4,17 @@ import ProduitFavorisContext from "../../../../contexts/produitFavorisContext";
 import SearchBar from "./components/SearchBar/SearchBar";
 import Produit from "./components/Produit/Produit";
 import useFetchData from "../../../../hooks/useFetchData";
+import ApiContext from "../../../../contexts/ApiContext";
+import { deleteProduit } from "../../../../apis";
 
 const Produits = ({ visible }) => {
+  const { BASE_URL } = useContext(ApiContext);
   const [filterInput, setFilterInput] = useState("");
   const [filterBy, setFilterBy] = useState({ byName: true, byNote: false });
   const produitsFavorisContext = useContext(ProduitFavorisContext);
-  const [produits, isLoading] = useFetchData("http://localhost:5000/produits");
+  const [produits, setProduits, isLoading] = useFetchData(
+    `${BASE_URL}/produits`
+  );
 
   function handleInput(e) {
     const filter = e.target.value;
@@ -29,6 +34,16 @@ const Produits = ({ visible }) => {
   const getItemSavedState = (item) => {
     const test = produitsFavorisContext.data.filter((p) => item._id === p._id);
     return test.length > 0;
+  };
+
+  const supprimerUnProduit = async (produitId) => {
+    try {
+      const response = await deleteProduit(produitId);
+      if (response == produitId)
+        setProduits(produits.filter((produit) => produit._id != produitId));
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -58,7 +73,11 @@ const Produits = ({ visible }) => {
               })
               .map((item) => (
                 <Fragment key={item._id}>
-                  <Produit data={item} saved={getItemSavedState(item)} />
+                  <Produit
+                    data={item}
+                    saved={getItemSavedState(item)}
+                    supprimerUnProduit={supprimerUnProduit}
+                  />
                 </Fragment>
               ))}
           </div>

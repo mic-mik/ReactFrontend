@@ -1,7 +1,8 @@
 import React, { Fragment } from "react";
 import parse from "html-react-parser";
+import { accueil } from "../../../../data/data";
 
-const Accueil = ({ accueil, handleDecouvrir }) => {
+const Accueil = ({ handleDecouvrir }) => {
   const { image, description } = accueil;
   return (
     <Fragment>

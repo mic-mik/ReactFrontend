@@ -7,8 +7,9 @@ import Logo from "./components/Logo/Logo";
 import User from "./components/User/User";
 import HeaderMenu from "./components/HeaderMenu/HeaderMenu";
 import Connexion from "./components/Connexion/Connexion";
+import { NavLink } from "react-router-dom";
 
-const Header = ({ setProduitsFavoris, setPage }) => {
+const Header = ({ setProduitsFavoris }) => {
   const [showMenu, setShowMenu] = useState(false);
   const [showConnexion, setShowConnexion] = useState(false);
   const [emailInput, setEmailInput] = useState("");
@@ -41,17 +42,16 @@ const Header = ({ setProduitsFavoris, setPage }) => {
   };
   return (
     <div className={`${styles.header} d-flex flex-row align-items-center`}>
-      <Logo logo={logo} setPage={setPage} />
+      <Logo logo={logo} />
       <User user={user} handleDeconnexion={handleOnClickDeconnexion} />
       <ul>
         <li>
-          <a
-            onClick={() => setPage("admin")}
+          <NavLink
             className="hover_opacity ajouter_produits mr-10"
-            href="#"
+            to="/admin/add"
           >
             <i className="fa-solid fa-plus mr-5"></i> Produits
-          </a>
+          </NavLink>
         </li>
         <li>
           <span className={styles.produitsFavoris}>

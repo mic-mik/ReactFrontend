@@ -1,12 +1,10 @@
 import React, { useContext, useEffect, useState } from "react";
-import { accueil } from "./data/data";
 import styles from "./App.module.scss";
 import ProduitFavorisContext from "./contexts/produitFavorisContext";
-import Home from "./pages/Home/Home";
 import Header from "./components/Header/Header";
 import Banner from "./components/Banner/Banner";
 import Footer from "./components/Footer/Footer";
-import Admin from "./pages/Admin/Admin";
+import { Outlet } from "react-router-dom";
 
 const App = () => {
   const [produitsFavoris, setProduitsFavoris] = useState([]);
@@ -28,8 +26,7 @@ const App = () => {
         <Header setProduitsFavoris={setProduitsFavoris} setPage={setPage} />
         <Banner />
 
-        {page == "home" && <Home accueil={accueil} />}
-        {page == "admin" && <Admin />}
+        <Outlet />
       </ProduitFavorisContext.Provider>
       <Footer />
     </div>
