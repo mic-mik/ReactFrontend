@@ -1,19 +1,12 @@
-/* eslint-disable react-refresh/only-export-components */
-
-import React, { lazy } from "react";
+import React from "react";
 import { createBrowserRouter } from "react-router-dom";
 import App from "./App";
 import { getProduit } from "./apis";
+import Home from "./pages/Home/Home";
+import Admin from "./pages/Admin/Admin";
+import AdminAddProduitForm from "./pages/Admin/components/AdminAddProduitForm/AdminAddProduitForm";
+import AdminEditProduitForm from "./pages/Admin/components/AdminEditProduitForm/AdminEditProduitForm";
 import NotFound from "./pages/NotFound/NotFound";
-
-const Home = lazy(() => import("./pages/Home/Home"));
-const Admin = lazy(() => import("./pages/Admin/Admin"));
-const AdminAddProduitForm = lazy(() =>
-  import("./pages/Admin/components/AdminAddProduitForm/AdminAddProduitForm")
-);
-const AdminEditProduitForm = lazy(() =>
-  import("./pages/Admin/components/AdminEditProduitForm/AdminEditProduitForm")
-);
 
 const router = createBrowserRouter([
   {

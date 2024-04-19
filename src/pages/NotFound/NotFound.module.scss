@@ -1,3 +1,13 @@
 .notFound {
-  height: 100vh;
+  min-height: 100vh;
+  font-size: 4rem;
+  font-weight: bold;
+  font-family: var(--font-family);
+  span {
+    letter-spacing: 10px;
+  }
+  a {
+    color: var(--primary);
+    text-decoration: none;
+  }
 }
