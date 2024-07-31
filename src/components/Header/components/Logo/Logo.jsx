@@ -5,7 +5,7 @@ const Logo = ({ logo }) => {
   return (
     <div className="flex-fill">
       <NavLink to="/">
-        <img src={logo} alt="Atelier Materi - Haute parfumerie française" />
+        <img src={logo} alt="MICpro- Multimedia service" />
       </NavLink>
     </div>
   );

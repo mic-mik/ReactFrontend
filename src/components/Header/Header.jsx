@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import logo from "../../assets/images/AM-logo.svg";
+import logo from "../../assets/images/OIP.jpg";
 import styles from "./Header.module.scss";
 import { users } from "../../data/data";
 import ProduitFavorisContext from "../../contexts/produitFavorisContext";
@@ -40,19 +40,23 @@ const Header = ({ setProduitsFavoris }) => {
     setUser(null);
     setProduitsFavoris([]);
   };
+
   return (
     <div className={`${styles.header} d-flex flex-row align-items-center`}>
       <Logo logo={logo} />
       <User user={user} handleDeconnexion={handleOnClickDeconnexion} />
       <ul>
-        <li>
-          <NavLink
-            className="hover_opacity ajouter_produits mr-10"
-            to="/admin/add"
-          >
-            <i className="fa-solid fa-plus mr-5"></i> Produits
-          </NavLink>
-        </li>
+        {/* partie ajoutée */}
+        {user && (
+          <li>
+            <NavLink
+              className="hover_opacity ajouter_produits mr-10"
+              to="/admin/add"
+            >
+              <i className="fa-solid fa-plus mr-5"></i> Produits
+            </NavLink>
+          </li>
+        )}
         <li>
           <span className={styles.produitsFavoris}>
             {produitsFavorisContext.data.length}

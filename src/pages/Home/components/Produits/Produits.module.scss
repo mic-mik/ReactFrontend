@@ -5,10 +5,13 @@
 .produit {
   width: 380px;
   text-align: center;
-  p {
-    margin: 5px auto 10px auto;
-    font-style: italic;
-  }
+  background-color: aliceblue                                                                                                                                                                                                                                                                                                                                                                                                    ;
+  
+}
+
+.produit p {
+  margin: 5px auto 10px auto;
+  font-style: italic;
 }
 
 .description_produit {
@@ -20,11 +23,9 @@
   color: var(--favoris);
 }
 
-.produitsFavoris {
-  img {
-    width: 50px !important;
-    padding: 0 !important;
-  }
+.produitsFavoris img {
+  width: 50px !important;
+  padding: 0 !important;
 }
 
 .grid {
@@ -39,16 +40,18 @@
 
 .delete_edit {
   position: relative;
-  i {
-    position: absolute;
-    right: 18px;
-    background: var(--primary);
-    color: white;
-    z-index: 999;
-    &:hover {
-      background-color: red;
-    }
-  }
+}
+
+.delete_edit i {
+  position: absolute;
+  right: 18px;
+  background: var(--primary);
+  color: white;
+  z-index: 999;
+}
+
+.delete_edit i:hover {
+  background-color: blue;
 }
 
 i.fa_trash {

@@ -1,88 +1,22 @@
-export const produits = [
-  {
-    _id: 1,
-    name: "Cacao Porcelana",
-    image: "assets/images/produits/produit1.jpg",
-    note: "Gourmand, Boisé",
-  },
-  {
-    _id: 2,
-    name: "Santal Blond",
-    image: "assets/images/produits/produit2.jpg",
-    note: "Boisé, Ambré",
-  },
-  {
-    _id: 3,
-    name: "Cuir Nilam",
-    image: "assets/images/produits/produit3.jpg",
-    note: "Boisé, Cuiré",
-  },
-  {
-    _id: 4,
-    name: "Poivre Pomelo",
-    image: "assets/images/produits/produit4.jpg",
-    note: "Épicé, Hespéridé",
-  },
-  {
-    _id: 5,
-    name: "Rose Ardoise",
-    image: "assets/images/produits/produit5.jpg",
-    note: "Floral, Boisé, Ambré",
-  },
-  {
-    _id: 6,
-    name: "Iris Ebène",
-    image: "assets/images/produits/produit6.jpg",
-    note: "Floral, Cuir",
-  },
-  {
-    _id: 7,
-    name: "Bois d'Ambrette",
-    image: "assets/images/produits/produit7.jpg",
-    note: "Musqué, Boisé",
-  },
-  {
-    _id: 8,
-    name: "Cèdre Figalia",
-    image: "assets/images/produits/produit8.jpg",
-    note: "Végétal, Boisé",
-  },
-  {
-    _id: 9,
-    name: "Narcisse Taiji",
-    image: "assets/images/produits/produit9.jpg",
-    note: "Floral, Boisé, Épicé",
-  },
-];
-
 export const accueil = {
   image: {
-    url: "assets/images/perfume.jpg",
+    url: "assets/images/ComStaf.png",
     alt: "Nos produits",
   },
   description: {
-    titre: "HAUTE PARFUMERIE FRANÇAISE",
+    titre: "MIC PRO SERVICES",
     texte: `<p>
-    Inspirée par la matière et ceux qui la révèlent, Atelier Materi
-    est une maison de création française qui fait le choix d’un
-    nouveau luxe. Un luxe honnête, sincère et authentique qui prend le
-    temps de faire.
+    Sur notre site web, découvrez une gamme variée de services de formation et de création. Des bases de la conception graphique aux techniques avancées de la photographie et du cinéma, nous proposons une formation exhaustive pour renforcer vos compétences professionnelles. Plongez dans l'univers de la création visuelle avec nos formations sur Canva et la conception de logos.
   </p>
   <p>
-    La Maison associe vision contemporaine et savoir-faire artisanal
-    et s’entoure d’artistes et d’artisans, depuis la récolte de ses
-    matières premières jusqu’à la réalisation de ses fragrances,
-    flacons et coffrets.
+  Maîtrisez l'édition vidéo avec Adobe Premiere Pro et perfectionnez votre art de la prise de vue cinéma. Boostez votre présence sur les réseaux sociaux et apprenez à créer du contenu engageant sur Instagram. Avec des descriptions détaillées et des visuels attrayants, notre site vous offre les outils nécessaires pour développer votre créativité et votre professionnalisme.
   </p>
   <p>
-    Chaque fragrance de La Maison offre une écriture olfactive
-    minimale et contemporaine autour d’une matière première revisitée
-    avec conviction, partis-pris et indépendance. Ses créations se
-    distinguent par leur caractère épuré, moderne et singulier.
+  Explorez nos services dès maintenant et transformez vos idées en réalité.
   </p>`,
     bouton: {
       lien: "#",
-      texte: "DÉCOUVRIR",
+      texte: "Découvrer Nos services",
     },
   },
 };
@@ -90,14 +24,8 @@ export const accueil = {
 export const users = [
   {
     _id: 1,
-    email: "lilia@react.teccart",
+    email: "michee@react.teccart",
     password: "1234",
-    fullName: "Lilia Ould Hocine",
-  },
-  {
-    _id: 2,
-    email: "beyonce@react.teccart",
-    password: "1234",
-    fullName: "Beyoncé Knowles",
+    fullName: "Michee Nyembo",
   },
 ];
